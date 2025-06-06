@@ -1,84 +1,360 @@
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<div id="pcrc" class="font-sans text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PC Recycling Center</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/download.ico"
+      type="image/x-icon"
+    />
+    <style>
+      /* Smooth slide-in/out for the mobile sidebar */
+      .mobile-sidebar {
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+  </head>
 
-  <!-- Responsive Navigation Wrapper -->
-  <div class="flex flex-col lg:flex-row">
+  <body class="m-0 overflow-x-hidden">
+    <div id="pcrc" class="font-sans text-gray-800">
+      <!-- Container for sidebar + content -->
+      <div class="flex">
+        <!-- Sidebar for large screens (always visible) -->
+        <aside
+          class="hidden lg:flex flex-col w-48 bg-white border-r border-blue-900 p-4 space-y-4 text-blue-900 font-semibold fixed h-screen top-0 left-0"
+        >
+          <h1 class="text-xl font-bold text-center text-blue-900">
+            PC Recycling<br />Center
+          </h1>
+          <nav class="flex flex-col space-y-2 mt-4 text-sm">
+            <a href="#hero" class="hover:underline text-blue-900">Home</a>
+            <a href="#why" class="hover:underline text-blue-900">Why Recycle</a>
+            <a href="#free" class="hover:underline text-blue-900">Why Free?</a>
+            <a href="#process" class="hover:underline text-blue-900">Our Process</a>
+            <a href="#accept" class="hover:underline text-blue-900">What We Accept</a>
+            <a href="#contact" class="hover:underline text-blue-900">Contact</a>
+          </nav>
+        </aside>
 
-    <!-- Sidebar for large screens -->
-    <aside class="hidden lg:flex flex-col w-48 bg-white border-r border-blue-200 p-4 space-y-4 text-blue-900 font-semibold fixed h-screen">
-      <h1 class="text-xl font-bold text-center">PC Recycling<br>Center</h1>
-      <nav class="flex flex-col space-y-2 mt-4 text-sm">
-        <a href="#hero" class="hover:underline">Home</a>
-        <a href="#why" class="hover:underline">Why Recycle</a>
-        <a href="#free" class="hover:underline">Why Free?</a>
-        <a href="#process" class="hover:underline">Our Process</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-    </aside>
+        <!-- Mobile sidebar (off-canvas) -->
+        <div
+          id="mobileSidebar"
+          class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-blue-900 p-4 space-y-4 text-blue-900 font-semibold transform -translate-x-full mobile-sidebar lg:hidden"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h1 class="text-xl font-bold text-blue-900">PC Recycling</h1>
+            <button id="closeSidebarBtn" class="text-blue-900">✕</button>
+          </div>
+          <nav class="flex flex-col space-y-4 text-base">
+            <a href="#hero" class="hover:underline" onclick="closeSidebar()">Home</a>
+            <a href="#why" class="hover:underline" onclick="closeSidebar()">Why Recycle</a>
+            <a href="#free" class="hover:underline" onclick="closeSidebar()">Why Free?</a>
+            <a href="#process" class="hover:underline" onclick="closeSidebar()">Our Process</a>
+            <a href="#accept" class="hover:underline" onclick="closeSidebar()">What We Accept</a>
+            <a href="#contact" class="hover:underline" onclick="closeSidebar()">Contact</a>
+          </nav>
+        </div>
 
-    <!-- Mobile Nav (toggle menu) -->
-    <div class="lg:hidden bg-blue-900 text-white p-4 sticky top-0 z-20">
-      <div class="flex justify-between items-center">
-        <span class="font-bold text-lg">PC Recycling Center</span>
-        <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">☰</button>
-      </div>
-      <div id="mobileMenu" class="hidden mt-3 space-y-2 text-sm">
-        <a href="#hero" class="block hover:underline">Home</a>
-        <a href="#why" class="block hover:underline">Why Recycle</a>
-        <a href="#free" class="block hover:underline">Why Free?</a>
-        <a href="#process" class="block hover:underline">Our Process</a>
-        <a href="#contact" class="block hover:underline">Contact</a>
+        <!-- Overlay behind mobile sidebar -->
+        <div
+          id="sidebarOverlay"
+          class="fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none lg:hidden"
+        ></div>
+
+        <!-- Main content (shifted right on desktop) -->
+        <div class="flex-1 lg:ml-48">
+          <!-- Mobile top bar with toggle button (hidden on lg+) -->
+          <div
+            class="lg:hidden bg-[#0d2b53] text-white p-4 sticky top-0 z-20 flex justify-between items-center"
+          >
+            <span class="font-bold text-lg">PC Recycling Center</span>
+            <button id="openSidebarBtn" class="text-white text-2xl">☰</button>
+          </div>
+
+          <main>
+            <!-- Hero with Larger Logo + Matching Background (#0d2b53) -->
+            <section
+              id="hero"
+              class="scroll-mt-24 px-4 pt-24 text-center min-h-screen flex flex-col justify-center items-center text-white"
+              style="background-color: #0d2b53;"
+            >
+              <!-- Bigger logo with CSS mask fade -->
+              <div class="mb-8">
+                <img
+                  src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/recyclelogo.png"
+                  alt="PC Recycling Center Logo"
+                  class="h-44 md:h-56 mx-auto"
+                  style="
+                    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+                  "
+                />
+              </div>
+
+              <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Free Electronic Recycling with Pickup
+              </h2>
+              <p class="max-w-2xl text-lg md:text-xl mb-8 mx-auto">
+                We collect and recycle electronics at no cost — with optional
+                on-site data drive removal, secure data handling, and zero
+                landfill waste.
+              </p>
+              <a
+                href="#contact"
+                class="px-6 py-3 bg-white text-blue-900 rounded hover:bg-blue-300 transition"
+                >Schedule a Pickup</a
+              >
+            </section>
+
+            <!-- Why Recycle -->
+            <section
+              id="why"
+              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-100 text-blue-900"
+            >
+              <div
+                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
+              >
+                <!-- Text column -->
+                <div class="w-full lg:w-1/2 text-center">
+                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
+                    Why Specialized E-Waste Recycling?
+                  </h2>
+                  <p class="text-lg mb-4">
+                    Electronics contain hazardous materials like mercury, cadmium,
+                    and lithium. When dumped in landfills, they leach into the
+                    soil and water, causing long-term damage. E-waste is one of
+                    the fastest-growing waste streams globally, with over 50
+                    million metric tons of e-waste generated annually.
+                  </p>
+                  <ul class="text-center text-lg mb-4 space-y-2">
+                    <li>
+                      50 million metric tons of e-waste are generated each year,
+                      with only 17.4% being recycled.
+                    </li>
+                    <li>
+                      E-waste is one of the largest sources of toxic waste, with
+                      harmful chemicals affecting ecosystems and human health.
+                    </li>
+                    <li>
+                      Recycling electronics reduces the need for mining raw
+                      materials, such as rare earth metals, which helps conserve
+                      natural resources.
+                    </li>
+                  </ul>
+                </div>
+                <!-- Image column -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                  <img
+                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/1874eacc-796b-41ab-b9fb-550c66e9a89a.png"
+                    alt="Why Recycle Image"
+                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- Why Free -->
+            <section
+              id="free"
+              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-50 text-blue-900"
+            >
+              <div
+                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
+              >
+                <!-- Image column -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                  <img
+                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/68ee2fa7-9616-4020-86cd-e5fe75d84705.png"
+                    alt="Why Free Image"
+                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
+                  />
+                </div>
+                <!-- Text column -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left lg:pl-8">
+                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
+                    Why Is It Free?
+                  </h2>
+                  <p class="text-lg mb-4">
+                    We fund our work by repairing, reusing, and reselling viable
+                    components. Electronics contain precious metals like gold,
+                    silver, and copper that can be recovered and reused. What can’t
+                    be reused is responsibly recycled with certified partners to
+                    ensure environmental safety.
+                  </p>
+                  <ul class="text-center lg:text-left text-lg mb-4 space-y-2">
+                    <li>
+                      Repairable devices are refurbished and resold, contributing
+                      to sustainability while generating funds.
+                    </li>
+                    <li>
+                      Recycling reduces the need for mining, saving energy and
+                      reducing environmental impact.
+                    </li>
+                    <li>
+                      For every ton of e-waste recycled, over $1,000 worth of
+                      valuable materials are recovered.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- Process -->
+            <section
+              id="process"
+              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-100 text-blue-900"
+            >
+              <div
+                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
+              >
+                <!-- Text column -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
+                    How We Recycle & Handle Data
+                  </h2>
+                  <ul class="text-center lg:text-left text-lg mb-4 space-y-2">
+                    <li>
+                      Devices are inspected and sorted for repair, resale, or
+                      recycling.
+                    </li>
+                    <li>
+                      Drives are securely wiped or removed on-site, ensuring data
+                      privacy and protection.
+                    </li>
+                    <li>
+                      Usable components are repaired, reused, or sold, reducing
+                      landfill waste and supporting circular economies.
+                    </li>
+                    <li>
+                      Non-usable parts are recycled with certified partners,
+                      ensuring proper disposal and environmental safety.
+                    </li>
+                  </ul>
+                  <p class="text-lg mt-4 max-w-xl mx-auto">
+                    The recycling of one metric ton of electronics can save up to
+                    2,000 pounds of raw materials and reduce CO2 emissions by 7.4
+                    metric tons — the same as taking 1.5 cars off the road for a
+                    year.
+                  </p>
+                </div>
+                <!-- Image column -->
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                  <img
+                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/57eddc20-bef7-4336-8198-33f13cb535a9.png"
+                    alt="How We Recycle Image"
+                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- What We Accept -->
+            <section
+              id="accept"
+              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-50 text-blue-900"
+            >
+              <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-semibold mb-6">
+                  What E-Waste We Accept
+                </h2>
+                <ul class="text-lg mb-6 space-y-2">
+                  <li>All PC towers & laptops</li>
+                  <li>All PC accessories</li>
+                  <li>Home printers</li>
+                  <li>Old gaming consoles & accessories</li>
+                  <li>Small electronics (keyboards, mice, routers, etc.)</li>
+                </ul>
+                <p class="text-lg">
+                  Note: All TVs and large monitors incur a $30 removal fee.
+                </p>
+              </div>
+            </section>
+
+            <!-- Contact -->
+            <section
+              id="contact"
+              class="px-4 text-center py-16 min-h-screen flex flex-col justify-center items-center bg-white text-blue-900"
+            >
+              <h2 class="text-3xl md:text-5xl font-semibold mb-4">
+                Schedule Your Free Pickup
+              </h2>
+              <p class="max-w-xl text-lg mb-6 mx-auto">
+                Submit your details and we’ll follow up to schedule pickup.
+              </p>
+              <form
+                action="https://formspree.io/f/xeokejzw"
+                method="POST"
+                class="w-full max-w-md bg-blue-100 p-6 rounded shadow space-y-4 mx-auto"
+              >
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="Your Name"
+                  required
+                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
+                />
+                <input
+                  type="text"
+                  name="Phone"
+                  placeholder="Phone Number"
+                  required
+                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
+                />
+                <input
+                  type="text"
+                  name="Address"
+                  placeholder="Pickup Address"
+                  required
+                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
+                />
+                <input
+                  type="text"
+                  name="Best Time"
+                  placeholder="Best Time to Contact"
+                  required
+                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
+                />
+                <button
+                  type="submit"
+                  class="w-full py-3 bg-blue-900 text-white rounded hover:bg-blue-700"
+                >
+                  Send Request
+                </button>
+              </form>
+            </section>
+          </main>
+        </div>
       </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="ml-0 lg:ml-48 w-full">
+    <script>
+      // Toggle mobile sidebar open/close
+      const openBtn = document.getElementById("openSidebarBtn");
+      const closeBtn = document.getElementById("closeSidebarBtn");
+      const sidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("sidebarOverlay");
 
-      <!-- Hero -->
-      <section id="hero" class="px-4 text-center py-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center bg-blue-50">
-        <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Free Electronic Recycling with Pickup</h2>
-        <p class="max-w-2xl text-lg md:text-xl text-gray-700 mb-8 mx-auto">We collect and recycle electronics at no cost — with optional on-site data drive removal, secure data handling, and zero landfill waste.</p>
-        <a href="#contact" class="px-6 py-3 bg-blue-900 text-white rounded hover:bg-blue-700 transition">Schedule a Pickup</a>
-      </section>
+      function openSidebar() {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("opacity-0", "pointer-events-none");
+        overlay.classList.add("opacity-50", "pointer-events-auto");
+      }
 
-      <!-- Why Recycle -->
-      <section id="why" class="px-4 text-center py-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center bg-white">
-        <h2 class="text-3xl md:text-5xl font-semibold text-blue-800 mb-4">Why Specialized E-Waste Recycling?</h2>
-        <p class="max-w-3xl text-lg text-gray-700 mb-4 mx-auto">Electronics contain hazardous materials like mercury, cadmium, and lithium. These harm the environment if dumped into regular trash. Responsible recycling protects nature and your data.</p>
-      </section>
+      function closeSidebar() {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.remove("opacity-50", "pointer-events-auto");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+      }
 
-      <!-- Why Free -->
-      <section id="free" class="px-4 text-center py-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center bg-blue-100">
-        <h2 class="text-3xl md:text-5xl font-semibold text-blue-900 mb-4">Why Is It Free?</h2>
-        <p class="max-w-3xl text-lg text-gray-700 mb-4 mx-auto">We fund our work by repairing, reusing, and reselling viable components. What can’t be reused is responsibly recycled with certified partners.</p>
-      </section>
-
-      <!-- Process -->
-      <section id="process" class="px-4 text-center py-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center bg-white">
-        <h2 class="text-3xl md:text-5xl font-semibold text-blue-800 mb-4">How We Recycle & Handle Data</h2>
-        <ul class="text-left text-lg text-gray-600 max-w-xl mx-auto mb-4 space-y-2">
-          <li>✔️ Devices are inspected and sorted</li>
-          <li>✔️ Drives are securely wiped or removed on-site</li>
-          <li>✔️ Usable components are repaired or reused</li>
-          <li>✔️ Non-usable parts are recycled properly</li>
-        </ul>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="px-4 text-center py-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:items-center bg-blue-50">
-        <h2 class="text-3xl md:text-5xl font-semibold text-blue-900 mb-4">Schedule Your Free Pickup</h2>
-        <p class="max-w-xl text-lg text-gray-700 mb-6 mx-auto">Submit your details and we’ll follow up to schedule pickup.</p>
-        <form action="https://formspree.io/f/xeokejzw" method="POST" class="w-full max-w-md bg-white p-6 rounded shadow space-y-4 mx-auto">
-          <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 border border-blue-300 rounded" />
-          <input type="text" name="Phone" placeholder="Phone Number" required class="w-full p-3 border border-blue-300 rounded" />
-          <input type="text" name="Address" placeholder="Pickup Address" required class="w-full p-3 border border-blue-300 rounded" />
-          <input type="text" name="Best Time" placeholder="Best Time to Contact" required class="w-full p-3 border border-blue-300 rounded" />
-          <button type="submit" class="w-full py-3 bg-blue-900 text-white rounded hover:bg-blue-700">Send Request</button>
-        </form>
-      </section>
-
-    </main>
-  </div>
-</div>
+      openBtn.addEventListener("click", openSidebar);
+      closeBtn.addEventListener("click", closeSidebar);
+      overlay.addEventListener("click", closeSidebar);
+    </script>
+  </body>
+</html>
