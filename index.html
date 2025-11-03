@@ -1,374 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Tailwind CDN -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PcRecyclingCenter | Henderson NV</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="PcRecyclingCenter in Henderson NV — offering PC setup, Smart TV configuration, printer setup, tech training, diagnostics, and e-waste removal.">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PC Recycling Center</title>
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/download.ico"
-      type="image/x-icon"
-    />
-    <style>
-      /* Smooth slide-in/out for the mobile sidebar */
-      .mobile-sidebar {
-        transition: transform 0.3s ease-in-out;
-      }
-    </style>
-  </head>
+<body class="bg-gradient-to-b from-blue-50 to-blue-100 text-gray-800 font-sans">
 
-  <body class="m-0 overflow-x-hidden">
-    <div id="pcrc" class="font-sans text-gray-800">
-      <!-- Container for sidebar + content -->
-      <div class="flex">
-        <!-- Sidebar for large screens (always visible) -->
-        <aside
-          class="hidden lg:flex flex-col w-48 bg-white border-r border-blue-900 p-4 space-y-4 text-blue-900 font-semibold fixed h-screen top-0 left-0"
-        >
-          <h1 class="text-xl font-bold text-center text-blue-900">
-            PC Recycling<br />Center
-          </h1>
-          <nav class="flex flex-col space-y-2 mt-4 text-sm">
-            <a href="#hero" class="hover:underline text-blue-900">Home</a>
-            <a href="#why" class="hover:underline text-blue-900">Why Recycle</a>
-            <a href="#free" class="hover:underline text-blue-900">Why Free?</a>
-            <a href="#process" class="hover:underline text-blue-900">Our Process</a>
-            <a href="#accept" class="hover:underline text-blue-900">What We Accept</a>
-            <a href="#contact" class="hover:underline text-blue-900">Contact</a>
-          </nav>
-        </aside>
+  <!-- HEADER -->
+  <header class="bg-blue-800 text-white shadow-lg fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center">
+      <h1 class="text-3xl font-bold">PcRecyclingCenter</h1>
+      <nav class="mt-3 sm:mt-0">
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="#hero" class="hover:text-blue-300 transition">Home</a></li>
+          <li><a href="#services" class="hover:text-blue-300 transition">Services</a></li>
+          <li><a href="#contact" class="hover:text-blue-300 transition">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Mobile sidebar (off-canvas) -->
-        <div
-          id="mobileSidebar"
-          class="fixed inset-y-0 left-0 z-40 w-64 bg-white border-r border-blue-900 p-4 space-y-4 text-blue-900 font-semibold transform -translate-x-full mobile-sidebar lg:hidden"
-        >
-          <div class="flex justify-between items-center mb-6">
-            <h1 class="text-xl font-bold text-blue-900">PC Recycling</h1>
-            <button id="closeSidebarBtn" class="text-blue-900">✕</button>
+  <!-- HERO -->
+  <section id="hero" class="text-center bg-blue-700 text-white flex flex-col justify-center items-center min-h-screen px-6">
+    <h2 class="text-4xl sm:text-5xl font-semibold mb-6 mt-20 sm:mt-0">Your Local Tech & Recycling Experts</h2>
+    <p class="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+      Based in Henderson, Nevada — <strong>PcRecyclingCenter</strong> helps you set up, maintain, and understand your home and office technology.  
+      We provide <a href="#services" class="text-blue-300 hover:underline">PC setups</a>,  
+      <a href="#services" class="text-blue-300 hover:underline">Smart TV configurations</a>,  
+      <a href="#services" class="text-blue-300 hover:underline">printer setups</a>,  
+      and <a href="#services" class="text-blue-300 hover:underline">one-on-one tech training</a>.  
+      We also offer <a href="#services" class="text-blue-300 hover:underline">computer diagnostics and repair guidance</a>  
+      and <a href="#services" class="text-blue-300 hover:underline">e-waste pickup</a> for responsible disposal.
+    </p>
+    <p class="text-lg sm:text-xl max-w-2xl mx-auto mt-8">
+      Whether you're setting up new equipment or learning to use what you already have —  
+      we're here to make technology simple, affordable, and stress-free.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container mx-auto px-4 flex flex-col justify-center min-h-screen py-20">
+    <h3 class="text-3xl sm:text-4xl font-bold text-center text-blue-800 mb-12">Our Services</h3>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- E-Waste -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">Electronic Waste Pickup</h4>
+        <p class="text-gray-600 mb-4">
+          We safely collect and recycle old computers, monitors, cables, and other electronics. 
+          Responsible e-waste disposal keeps harmful materials out of landfills.
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$20 / pickup</p>
+      </div>
+
+      <!-- Printer Setup -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">Printer Setup & Configuration</h4>
+        <p class="text-gray-600 mb-4">
+          We connect your printer to Wi-Fi or USB, install drivers, and ensure it’s fully functional.
+          Includes troubleshooting and print testing for optimal use.
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$80 / setup</p>
+      </div>
+
+      <!-- Smart TV -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">Smart TV Setup & App Connection</h4>
+        <p class="text-gray-600 mb-4">
+          We’ll connect your Smart TV to Wi-Fi, install and log into streaming apps, 
+          and calibrate your display for best performance.  
+          <br><span class="font-semibold">Wall mounting available for an additional $160.</span>
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$80 / setup</p>
+      </div>
+
+      <!-- PC Setup -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">PC Setup, Optimization & Support</h4>
+        <p class="text-gray-600 mb-4">
+          We’ll unbox, connect, and fully configure your PC. Includes Windows setup, driver updates, 
+          software installation, and connecting peripherals for smooth performance.
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$80 / setup</p>
+      </div>
+
+      <!-- Diagnostics -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">Computer Diagnostics & Repair</h4>
+        <p class="text-gray-600 mb-4">
+          Experiencing lag, crashes, or boot issues? We’ll diagnose the cause and discuss repair options.  
+          You’ll always receive a quote before any work begins.
+          <br><br>
+          <strong>Diagnosis:</strong> $50 flat rate  
+          <br><strong>Repair:</strong> Cost determined after evaluation
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$50 / diagnostic</p>
+      </div>
+
+      <!-- Tech Training -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition">
+        <h4 class="text-xl font-semibold text-blue-700 mb-3">One-on-One Tech Training</h4>
+        <p class="text-gray-600 mb-4">
+          Learn to use your devices with confidence. Personalized lessons cover computer basics, 
+          safe browsing, smart TV navigation, printer management, and general troubleshooting.
+        </p>
+        <p class="text-blue-700 font-bold text-lg">$60 / hour</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-blue-800 text-white flex flex-col justify-center items-center min-h-screen px-4">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl sm:text-4xl font-bold mb-6">Contact Us</h3>
+      <p class="mb-8 text-blue-100 max-w-xl mx-auto">
+        Serving Henderson, NV and nearby areas. Use the form below to schedule service or request a quote.
+      </p>
+      
+      <!-- REAL FORM USING FORMSPREE -->
+      <div class="max-w-md mx-auto bg-blue-700 rounded-2xl p-6 shadow-lg">
+        <form action="https://formspree.io/f/xeokejzw" method="POST">
+          <div class="mb-4">
+            <input type="text" name="name" placeholder="Your Name" required 
+              class="w-full p-3 rounded bg-blue-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
           </div>
-          <nav class="flex flex-col space-y-4 text-base">
-            <a href="#hero" class="hover:underline" onclick="closeSidebar()"
-              >Home</a
-            >
-            <a href="#why" class="hover:underline" onclick="closeSidebar()"
-              >Why Recycle</a
-            >
-            <a href="#free" class="hover:underline" onclick="closeSidebar()"
-              >Why Free?</a
-            >
-            <a href="#process" class="hover:underline" onclick="closeSidebar()"
-              >Our Process</a
-            >
-            <a href="#accept" class="hover:underline" onclick="closeSidebar()"
-              >What We Accept</a
-            >
-            <a href="#contact" class="hover:underline" onclick="closeSidebar()"
-              >Contact</a
-            >
-          </nav>
-        </div>
-
-        <!-- Overlay behind mobile sidebar -->
-        <div
-          id="sidebarOverlay"
-          class="fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none lg:hidden"
-        ></div>
-
-        <!-- Main content (shifted right on desktop) -->
-        <div class="flex-1 lg:ml-48">
-          <!-- Mobile top bar with toggle button (hidden on lg+) -->
-          <div
-            class="lg:hidden bg-[#0d2b53] text-white p-4 sticky top-0 z-20 flex justify-between items-center"
-          >
-            <span class="font-bold text-lg">PC Recycling Center</span>
-            <button id="openSidebarBtn" class="text-white text-2xl">☰</button>
+          <div class="mb-4">
+            <input type="email" name="email" placeholder="Your Email" required 
+              class="w-full p-3 rounded bg-blue-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
           </div>
+          <div class="mb-4">
+            <select name="service" class="w-full p-3 rounded bg-blue-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <option value="">Select Service</option>
+              <option value="E-waste Pickup">E-waste Pickup ($20)</option>
+              <option value="Printer Setup">Printer Setup ($80)</option>
+              <option value="PC Setup">PC Setup ($80)</option>
+              <option value="Smart TV Setup">Smart TV Setup ($80)</option>
+              <option value="Diagnostics">Diagnostics ($50)</option>
+              <option value="Tech Training">Tech Training ($60/hr)</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <textarea name="message" rows="4" placeholder="Your Message or Details" required 
+              class="w-full p-3 rounded bg-blue-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded font-semibold transition">
+            Send Message
+          </button>
+        </form>
+      </div>
 
-          <main>
-            <!-- Hero with Larger Logo + Matching Background (#0d2b53) -->
-            <section
-              id="hero"
-              class="scroll-mt-24 px-4 pt-12 md:pt-16 lg:pt-24 text-center min-h-screen flex flex-col justify-start md:justify-center items-center text-white"
-              style="background-color: #0d2b53;"
-            >
-              <!-- Heading first -->
-              <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Free Electronic Recycling with Pickup
-              </h2>
-              <p class="max-w-2xl text-base sm:text-lg md:text-xl mb-4 mx-auto">
-                We collect and recycle electronics at no cost — with optional on-site
-                data drive removal, secure data handling, and zero landfill waste.
-              </p>
-
-              <!-- Logo below text -->
-              <div class="mb-6">
-                <img
-                  src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/recyclelogo.png"
-                  alt="PC Recycling Center Logo"
-                  class="h-32 sm:h-40 md:h-48 mx-auto"
-                  style="
-                    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-                    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-                  "
-                />
-              </div>
-
-              <!-- Button under logo -->
-              <a
-                href="#contact"
-                class="px-6 py-3 bg-white text-blue-900 rounded hover:bg-blue-300 transition"
-                >Schedule a Pickup</a
-              >
-            </section>
-
-            <!-- Why Recycle -->
-            <section
-              id="why"
-              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-100 text-blue-900"
-            >
-              <div
-                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
-              >
-                <!-- Text column -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
-                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
-                    Why Specialized E-Waste Recycling?
-                  </h2>
-                  <p class="text-lg mb-4">
-                    Electronics contain hazardous materials like mercury, cadmium,
-                    and lithium. When dumped in landfills, they leach into the soil
-                    and water, causing long-term damage. E-waste is one of the
-                    fastest-growing waste streams globally, with over 50 million
-                    metric tons of e-waste generated annually.
-                  </p>
-                  <ul class="text-center lg:text-left text-lg mb-4 space-y-2">
-                    <li>
-                      50 million metric tons of e-waste are generated each year,
-                      with only 17.4% being recycled.
-                    </li>
-                    <li>
-                      E-waste is one of the largest sources of toxic waste, with
-                      harmful chemicals affecting ecosystems and human health.
-                    </li>
-                    <li>
-                      Recycling electronics reduces the need for mining raw
-                      materials, such as rare earth metals, which helps conserve
-                      natural resources.
-                    </li>
-                  </ul>
-                </div>
-                <!-- Image column -->
-                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                  <img
-                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/1874eacc-796b-41ab-b9fb-550c66e9a89a.png"
-                    alt="Why Recycle Image"
-                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <!-- Why Free -->
-            <section
-              id="free"
-              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-50 text-blue-900"
-            >
-              <div
-                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
-              >
-                <!-- Image column -->
-                <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                  <img
-                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/68ee2fa7-9616-4020-86cd-e5fe75d84705.png"
-                    alt="Why Free Image"
-                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
-                  />
-                </div>
-                <!-- Text column -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left lg:pl-8">
-                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
-                    Why Is It Free?
-                  </h2>
-                  <p class="text-lg mb-4">
-                    We fund our work by repairing, reusing, and reselling viable
-                    components. Electronics contain precious metals like gold,
-                    silver, and copper that can be recovered and reused. What can’t
-                    be reused is responsibly recycled with certified partners to
-                    ensure environmental safety.
-                  </p>
-                  <ul class="text-center lg:text-left text-lg mb-4 space-y-2">
-                    <li>
-                      Repairable devices are refurbished and resold, contributing
-                      to sustainability while generating funds.
-                    </li>
-                    <li>
-                      Recycling reduces the need for mining, saving energy and
-                      reducing environmental impact.
-                    </li>
-                    <li>
-                      For every ton of e-waste recycled, over $1,000 worth of
-                      valuable materials are recovered.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <!-- Process -->
-            <section
-              id="process"
-              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-100 text-blue-900"
-            >
-              <div
-                class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center lg:space-x-8 space-y-8 lg:space-y-0"
-              >
-                <!-- Text column -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
-                  <h2 class="text-3xl md:text-5xl font-semibold mb-4">
-                    How We Recycle & Handle Data
-                  </h2>
-                  <ul class="text-center lg:text-left text-lg mb-4 space-y-2">
-                    <li>
-                      Devices are inspected and sorted for repair, resale, or
-                      recycling.
-                    </li>
-                    <li>
-                      Drives are securely wiped or removed on-site, ensuring data
-                      privacy and protection.
-                    </li>
-                    <li>
-                      Usable components are repaired, reused, or sold, reducing
-                      landfill waste and supporting circular economies.
-                    </li>
-                    <li>
-                      Non-usable parts are recycled with certified partners,
-                      ensuring proper disposal and environmental safety.
-                    </li>
-                  </ul>
-                  <p class="text-lg mt-4 max-w-xl mx-auto">
-                    The recycling of one metric ton of electronics can save up to
-                    2,000 pounds of raw materials and reduce CO2 emissions by 7.4
-                    metric tons — the same as taking 1.5 cars off the road for a
-                    year.
-                  </p>
-                </div>
-                <!-- Image column -->
-                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                  <img
-                    src="https://raw.githubusercontent.com/HelloSpaghettiBot/pcrecycle/refs/heads/main/57eddc20-bef7-4336-8198-33f13cb535a9.png"
-                    alt="How We Recycle Image"
-                    class="w-64 md:w-80 lg:w-96 h-auto object-cover border-4 border-blue-900 rounded-xl shadow-lg"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <!-- What We Accept -->
-            <section
-              id="accept"
-              class="px-4 py-16 min-h-screen flex flex-col justify-center bg-blue-50 text-blue-900"
-            >
-              <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-semibold mb-6">
-                  What E-Waste We Accept
-                </h2>
-                <ul class="text-lg mb-6 space-y-2">
-                  <li>All PC towers & laptops</li>
-                  <li>All PC accessories</li>
-                  <li>Home printers</li>
-                  <li>Old gaming consoles & accessories</li>
-                  <li>Small electronics (keyboards, mice, routers, etc.)</li>
-                </ul>
-                <p class="text-lg">
-                  Note: All TVs and large monitors incur a $30 removal fee.
-                </p>
-              </div>
-            </section>
-
-            <!-- Contact -->
-            <section
-              id="contact"
-              class="px-4 text-center py-16 min-h-screen flex flex-col justify-center items-center bg-white text-blue-900"
-            >
-              <h2 class="text-3xl md:text-5xl font-semibold mb-4">
-                Schedule Your Free Pickup
-              </h2>
-              <p class="max-w-xl text-lg mb-6 mx-auto">
-                Submit your details and we’ll follow up to schedule pickup.
-              </p>
-              <form
-                action="https://formspree.io/f/xeokejzw"
-                method="POST"
-                class="w-full max-w-md bg-blue-100 p-6 rounded shadow space-y-4 mx-auto"
-              >
-                <input
-                  type="text"
-                  name="Name"
-                  placeholder="Your Name"
-                  required
-                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
-                />
-                <input
-                  type="text"
-                  name="Phone"
-                  placeholder="Phone Number"
-                  required
-                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
-                />
-                <input
-                  type="text"
-                  name="Address"
-                  placeholder="Pickup Address"
-                  required
-                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
-                />
-                <input
-                  type="text"
-                  name="Best Time"
-                  placeholder="Best Time to Contact"
-                  required
-                  class="w-full p-3 border border-blue-300 rounded text-blue-900"
-                />
-                <button
-                  type="submit"
-                  class="w-full py-3 bg-blue-900 text-white rounded hover:bg-blue-700"
-                >
-                  Send Request
-                </button>
-              </form>
-            </section>
-          </main>
-        </div>
+      <div class="mt-8 text-blue-100">
+        <p><strong>Phone:</strong> (702) 555-1234</p>
+        <p><strong>Email:</strong> info@pcrecyclingcenter.com</p>
+        <p><strong>Location:</strong> Henderson, Nevada</p>
       </div>
     </div>
+  </section>
 
-    <script>
-      // Toggle mobile sidebar open/close
-      const openBtn = document.getElementById("openSidebarBtn");
-      const closeBtn = document.getElementById("closeSidebarBtn");
-      const sidebar = document.getElementById("mobileSidebar");
-      const overlay = document.getElementById("sidebarOverlay");
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-blue-100 py-6 text-center text-sm">
+    <p>© 2025 PcRecyclingCenter. All rights reserved.</p>
+  </footer>
 
-      function openSidebar() {
-        sidebar.classList.remove("-translate-x-full");
-        overlay.classList.remove("opacity-0", "pointer-events-none");
-        overlay.classList.add("opacity-50", "pointer-events-auto");
-      }
-
-      function closeSidebar() {
-        sidebar.classList.add("-translate-x-full");
-        overlay.classList.remove("opacity-50", "pointer-events-auto");
-        overlay.classList.add("opacity-0", "pointer-events-none");
-      }
-
-      openBtn.addEventListener("click", openSidebar);
-      closeBtn.addEventListener("click", closeSidebar);
-      overlay.addEventListener("click", closeSidebar);
-    </script>
-  </body>
+</body>
 </html>
